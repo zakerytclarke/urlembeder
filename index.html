@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>
+URL Embedder
+</title>
+</head>
+<body>
+<div id="maker"
+<div id="content">
+</div>
+<script>
+var o=window.location.search.substr(1);
+if(o==""){
+window.location = "https://zakerytclarke.github.io/urlembeded/?";
+}else{
+document.getElementById("content").innerHTML = decodeURIComponent(o);
+}
+</script>  
+</body>
+</html>
