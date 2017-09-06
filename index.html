@@ -14,7 +14,7 @@ window.location = "https://zakerytclarke.github.io/urlembeder/?%3C!DOCTYPE%20htm
 }else{;
 var doc = document.getElementById('iframe').contentWindow.document;
 doc.open();
-doc.write('Test');
+doc.write(decodeURIComponent(o));
 doc.close();}
 </script> 
 </body>
