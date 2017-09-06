@@ -13,10 +13,7 @@ var o=window.location.search.substr(1);
 if(o==""){  
 window.location = "https://zakerytclarke.github.io/urlembeder/?%3C!DOCTYPE%20html%3E%0A%3Chtml%3E%0A%3Chead%3E%0A%3Ctitle%3E%0AURL%20Embedder%0A%3C%2Ftitle%3E%0A%3C%2Fhead%3E%0A%3Cbody%3E%0A%3Ch1%3E%0AURL%20Embedder%0A%3C%2Fh1%3E%20%0A%3Ctextarea%20id%3D%22code%22%20style%3D%22width%3A100%25%3Bheight%3A250px%3B%22%3E%0A%3C%2Ftextarea%3E%20%0A%3Cbutton%20onclick%3D%22uembed()%22%3E%0AEncode%0A%3C%2Fbutton%3E%0A%3Cscript%3E%0Afunction%20uembed()%7B%0Avar%20o%3DencodeURIComponent(document.getElementById(%22code%22).value)%3B%0Awindow.location%20%3D%20%22https%3A%2F%2Fzakerytclarke.github.io%2Furlembeder%2F%3F%22%2Bo%3B%7D%0A%3C%2Fscript%3E%20%20%0A%3C%2Fbody%3E%0A%3C%2Fhtml%3E";
 }else{
-var x=window.open();
-x.document.open();
-x.document.write(decodeURIComponent(o););
-x.document.close();
+document.write(decodeURIComponent(o));
 }
 </script>  
 </body>
