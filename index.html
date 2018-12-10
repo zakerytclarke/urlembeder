@@ -103,7 +103,7 @@ render()
 </script>
 <script>
 function render(){
-  var url="https://zakerytclarke.github.io/urlembeder/?"+btoa(encodeURIComponent(escape(editor.getValue())));
+  var url="https://zakerytclarke.github.io/urlembeder/r/?"+btoa(encodeURIComponent(escape(editor.getValue())));
   document.getElementById("url").value=url;
   document.getElementById("output").src=url;
 }
