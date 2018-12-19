@@ -108,7 +108,7 @@ function render(){
   var url="https://zakerytclarke.github.io/urlembeder/r/?"+btoa(encodeURIComponent(escape(editor.getValue())));
   document.getElementById("url").value=url;
   document.getElementById("output").src=url;
-  console.log("https://zakerytclarke.github.io/urlembeder/?"+btoa(encodeURIComponent(escape(editor.getValue()))));
+  window.history.pushState("", "","https://zakerytclarke.github.io/urlembeder/?"+btoa(encodeURIComponent(escape(editor.getValue()))));
 }
 function view(){
   window.open(document.getElementById("url").value);
