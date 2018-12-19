@@ -34,7 +34,7 @@ html{
 }
 #url{
   color:#e0e3e5;
-  width:50%;
+  width:25%;
   border:black;
   border-radius:2vmin;
   padding:10px;
@@ -108,18 +108,18 @@ render();
 
 var o=window.location.search.substr(1);
 if(o==""){
- window.location="https://zakerytclarke.github.io/urlembeder/r/?JTI1M0NoMSUyNTNFJTI1MEElMjUyMCUyNTIwJTI1MjAlMjUyMEhlbGxvJTI1MjBXb3JsZCUyNTBBJTI1M0MlMkZoMSUyNTNFJTI1MEElMjUzQ3NjcmlwdCUyNTNFJTI1MEElMjUyMCUyNTIwJTI1MjAlMjUyMCUyNTBBJTI1M0MlMkZzY3JpcHQlMjUzRQ=="; 
+ window.location="https://zakerytclarke.github.io/urlembeder/?JTI1M0NoMSUyNTNFJTI1MEElMjUyMCUyNTIwJTI1MjAlMjUyMEhlbGxvJTI1MjBXb3JsZCUyNTBBJTI1M0MlMkZoMSUyNTNFJTI1MEElMjUzQ3NjcmlwdCUyNTNFJTI1MEElMjUyMCUyNTIwJTI1MjAlMjUyMCUyNTBBJTI1M0MlMkZzY3JpcHQlMjUzRQ=="; 
 }else{
   editor.setValue(unescape(decodeURIComponent(atob(o))));
 }
 function render(){
   var url="https://zakerytclarke.github.io/urlembeder/r/?"+btoa(encodeURIComponent(escape(editor.getValue())));
-  document.getElementById("url").value=url;
+  //document.getElementById("url").value=url;
   document.getElementById("output").src=url;
   history.pushState("", "","https://zakerytclarke.github.io/urlembeder/?"+btoa(encodeURIComponent(escape(editor.getValue()))));
 }
 function view(){
-  window.open(document.getElementById("url").value);
+  window.open("https://zakerytclarke.github.io/urlembeder/r/?"+btoa(encodeURIComponent(escape(editor.getValue()))));
 }
 function updateSettings(){
   editor.setTheme("ace/theme/"+document.getElementById("theme").value);
