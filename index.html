@@ -34,7 +34,6 @@ html{
 }
 #url{
   color:#e0e3e5;
-  width:25%;
   border:black;
   border-radius:2vmin;
   padding:10px;
@@ -60,9 +59,7 @@ Url Embeder
 <input id="url" type="text" value="https://zakerytclarke.github.io/urlembeder/r/?JTI1M0NoMSUyNTNFSGVsbG8lMjUyMFdvcmxkJTI1M0MlMkZoMSUyNTNF" onclick="view();">
 -->
   
-<input id="url" type="button" value="View Site" onclick="view();">
-
-  
+<div style="width:50%;right:0;">  
 <select id="theme" style="display:inline-block;" onchange="updateSettings();">
 <option value="chrome">Chrome</option>
 <option value="clouds">Clouds</option>
@@ -90,6 +87,11 @@ Url Embeder
 <option value="vibrant_ink">Vibrant Ink</option>
 </select>
 
+  
+<input id="url" type="button" value="View Site" onclick="view();">
+
+  </div>
+  
 </div>
 <div>
 <div id="editor">&lt;h1&gt;Hello World&lt;/h1&gt;
