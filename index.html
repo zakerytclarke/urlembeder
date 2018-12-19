@@ -98,14 +98,17 @@ var editor = ace.edit("editor");
 editor.setTheme("ace/theme/twilight");
 editor.getSession().setMode("ace/mode/html");
 editor.getSession().on('change', function() {
-render()
+render();
 });
-</script>
-<script>
+
+var o=window.location.search.substr(1);
+editor.setValue(unescape(decodeURIComponent(atob(o))));
+
 function render(){
   var url="https://zakerytclarke.github.io/urlembeder/r/?"+btoa(encodeURIComponent(escape(editor.getValue())));
   document.getElementById("url").value=url;
   document.getElementById("output").src=url;
+  window.location="https://zakerytclarke.github.io/urlembeder/?"+btoa(encodeURIComponent(escape(editor.getValue())));
 }
 function view(){
   window.open(document.getElementById("url").value);
