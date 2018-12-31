@@ -59,7 +59,7 @@ Url Embeder
 <input id="url" type="text" value="https://zakerytclarke.github.io/urlembeder/r/?JTI1M0NoMSUyNTNFSGVsbG8lMjUyMFdvcmxkJTI1M0MlMkZoMSUyNTNF" onclick="view();">
 -->
 
-<div style="width:50%;right:0;">
+<div style="width:50%;">
 <select id="theme" style="display:inline-block;" onchange="updateSettings();">
 <option value="chrome">Chrome</option>
 <option value="clouds">Clouds</option>
@@ -103,7 +103,7 @@ Url Embeder
 <script>
 var editor = ace.edit("editor");
 editor.setTheme("ace/theme/twilight");
-editor.setOptions({fontSize: "15pt"});
+editor.setOptions({fontSize: "12pt"});
 editor.getSession().setMode("ace/mode/html");
 editor.getSession().on('change', function() {
 render();
