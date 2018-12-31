@@ -56,6 +56,14 @@ html{
   background-color:#4c4a4a;
   vertical-align:middle;
 }
+#bookmark{
+  color:#e0e3e5;
+  border:black;
+  border-radius:2vmin;
+  background-color:#4c4a4a;
+  vertical-align:middle;
+}
+padding:10px;
 #theme{
   color:#e0e3e5;
   border:black;
@@ -123,7 +131,7 @@ Url Embeder
 </div>
 
 
-<div id="bookmarkList" style="display:none;position:absolute;width:90vw;height:90vh;overflow:scroll;background-color:#6a6e72;">
+<div id="bookmarkList" style="display:none;position:absolute;width:45vw;height:90vh;right:0;overflow:scroll;background-color:color:#e0e3e5;">
 <h2>
 Bookmarks
 </h2>
@@ -151,7 +159,7 @@ if(storedFavs!=null){
   var favorites=JSON.parse(favorites);
 }
 
-console.log("V 1.0");
+console.log("V 1.1");
 
 
 
@@ -181,9 +189,9 @@ function toggleBookmark(){
   }
 
   if(document.getElementById("bookmarkList").style.display=="none"){
-    document.getElementById("bookmarkList").style.display=="block";
+    document.getElementById("bookmarkList").style.display="block";
   }else{
-    document.getElementById("bookmarkList").style.display=="none";
+    document.getElementById("bookmarkList").style.display="none";
   }
 }
 
