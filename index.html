@@ -97,7 +97,7 @@ Url Embeder
 <div id="editor">&lt;h1&gt;Hello World&lt;/h1&gt;
 &lt;script&gt;
 &lt;/script&gt;</div>
-<iframe id="output" src="https://zakerytclarke.github.io/urlembeder/r/?JTI1M0NoMSUyNTNFSGVsbG8lMjUyMFdvcmxkJTI1M0MlMkZoMSUyNTNF"></iframe>
+<iframe id="output" src="https://zclarke.xyz/urlembeder/r/?JTI1M0NoMSUyNTNFSGVsbG8lMjUyMFdvcmxkJTI1M0MlMkZoMSUyNTNF"></iframe>
 </div>
 <script src="ace/ace.js" type="text/javascript" charset="utf-8"></script>
 <script>
@@ -110,18 +110,18 @@ render();
 
 var o=window.location.search.substr(1);
 if(o==""){
- window.location="https://zakerytclarke.github.io/urlembeder/?JTI1M0NoMSUyNTNFJTI1MEElMjUyMCUyNTIwJTI1MjAlMjUyMEhlbGxvJTI1MjBXb3JsZCUyNTBBJTI1M0MlMkZoMSUyNTNFJTI1MEElMjUzQ3NjcmlwdCUyNTNFJTI1MEElMjUyMCUyNTIwJTI1MjAlMjUyMCUyNTBBJTI1M0MlMkZzY3JpcHQlMjUzRQ=="; 
+ window.location="https://zclarke.xyz/urlembeder/?JTI1M0NoMSUyNTNFJTI1MEElMjUyMCUyNTIwJTI1MjAlMjUyMEhlbGxvJTI1MjBXb3JsZCUyNTBBJTI1M0MlMkZoMSUyNTNFJTI1MEElMjUzQ3NjcmlwdCUyNTNFJTI1MEElMjUyMCUyNTIwJTI1MjAlMjUyMCUyNTBBJTI1M0MlMkZzY3JpcHQlMjUzRQ=="; 
 }else{
   editor.setValue(unescape(decodeURIComponent(atob(o))));
 }
 function render(){
-  var url="https://zakerytclarke.github.io/urlembeder/r/?"+btoa(encodeURIComponent(escape(editor.getValue())));
+  var url="https://zclarke.xyz/urlembeder/r/?"+btoa(encodeURIComponent(escape(editor.getValue())));
   //document.getElementById("url").value=url;
   document.getElementById("output").src=url;
-  history.pushState("", "","https://zakerytclarke.github.io/urlembeder/?"+btoa(encodeURIComponent(escape(editor.getValue()))));
+  history.pushState("", "","https://zclarke.xyz/urlembeder/?"+btoa(encodeURIComponent(escape(editor.getValue()))));
 }
 function view(){
-  window.open("https://zakerytclarke.github.io/urlembeder/r/?"+btoa(encodeURIComponent(escape(editor.getValue()))));
+  window.open("https://zclarke.xyz/urlembeder/r/?"+btoa(encodeURIComponent(escape(editor.getValue()))));
 }
 function updateSettings(){
   editor.setTheme("ace/theme/"+document.getElementById("theme").value);
