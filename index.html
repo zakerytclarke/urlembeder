@@ -40,6 +40,14 @@ html{
   background-color:#4c4a4a;
   vertical-align:middle;
 }
+#font{
+  color:#e0e3e5;
+  border:black;
+  border-radius:2vmin;
+  padding:10px;
+  background-color:#4c4a4a;
+  vertical-align:middle;
+}
 #fav{
   color:#e0e3e5;
   border:black;
@@ -65,7 +73,7 @@ Url Embeder
 </h1>
 
 
-<div style="display:inline-block;right:0;width:50%;">
+<div style="display:inline-block;right:0;width:50%;display: flex;">
 <select id="theme" style="display:inline-block;" onchange="updateSettings();">
 <option value="chrome">Chrome</option>
 <option value="clouds">Clouds</option>
@@ -92,9 +100,11 @@ Url Embeder
 <option selected value="twilight">Twilight</option>
 <option value="vibrant_ink">Vibrant Ink</option>
 </select>
+<input id="font" type="text" value="12" onchange="">
 
 
 <input id="url" type="button" value="Fullscreen" onclick="view();">
+
 <button id="fav">
 <img src="assets/star.png">
 </button>
@@ -131,7 +141,7 @@ function render(){
   history.pushState("", "","http://zclarke.xyz/urlembeder/?"+btoa(encodeURIComponent(escape(editor.getValue()))));
 }
 function view(){
-  window.open("https://zclarke.xyz/urlembeder/r/?"+btoa(encodeURIComponent(escape(editor.getValue()))));
+  window.open("http://zclarke.xyz/urlembeder/r/?"+btoa(encodeURIComponent(escape(editor.getValue()))));
 }
 function updateSettings(){
   editor.setTheme("ace/theme/"+document.getElementById("theme").value);
