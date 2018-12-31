@@ -58,8 +58,8 @@ Url Embeder
 <!--
 <input id="url" type="text" value="https://zakerytclarke.github.io/urlembeder/r/?JTI1M0NoMSUyNTNFSGVsbG8lMjUyMFdvcmxkJTI1M0MlMkZoMSUyNTNF" onclick="view();">
 -->
-  
-<div style="width:50%;right:0;">  
+
+<div style="width:50%;right:0;">
 <select id="theme" style="display:inline-block;" onchange="updateSettings();">
 <option value="chrome">Chrome</option>
 <option value="clouds">Clouds</option>
@@ -87,11 +87,11 @@ Url Embeder
 <option value="vibrant_ink">Vibrant Ink</option>
 </select>
 
-  
+
 <input id="url" type="button" value="View Site" onclick="view();">
 
   </div>
-  
+
 </div>
 <div>
 <div id="editor">&lt;h1&gt;Hello World&lt;/h1&gt;
@@ -103,6 +103,7 @@ Url Embeder
 <script>
 var editor = ace.edit("editor");
 editor.setTheme("ace/theme/twilight");
+editor.setOptions({fontSize: "15pt"});
 editor.getSession().setMode("ace/mode/html");
 editor.getSession().on('change', function() {
 render();
@@ -110,7 +111,7 @@ render();
 
 var o=window.location.search.substr(1);
 if(o==""){
- window.location="http://zclarke.xyz/urlembeder/?JTI1M0NoMSUyNTNFJTI1MEElMjUyMCUyNTIwJTI1MjAlMjUyMEhlbGxvJTI1MjBXb3JsZCUyNTBBJTI1M0MlMkZoMSUyNTNFJTI1MEElMjUzQ3NjcmlwdCUyNTNFJTI1MEElMjUyMCUyNTIwJTI1MjAlMjUyMCUyNTBBJTI1M0MlMkZzY3JpcHQlMjUzRQ=="; 
+ window.location="http://zclarke.xyz/urlembeder/?JTI1M0NoMSUyNTNFJTI1MEElMjUyMCUyNTIwJTI1MjAlMjUyMEhlbGxvJTI1MjBXb3JsZCUyNTBBJTI1M0MlMkZoMSUyNTNFJTI1MEElMjUzQ3NjcmlwdCUyNTNFJTI1MEElMjUyMCUyNTIwJTI1MjAlMjUyMCUyNTBBJTI1M0MlMkZzY3JpcHQlMjUzRQ==";
 }else{
   editor.setValue(unescape(decodeURIComponent(atob(o))));
 }
