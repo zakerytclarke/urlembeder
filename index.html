@@ -151,6 +151,8 @@ if(storedFavs!=null){
   var favorites=JSON.parse(favorites);
 }
 
+console.log("V 1.0");
+
 
 
 function render(){
@@ -170,11 +172,11 @@ function toggleBookmark(){
 
   var storedFavs=localStorage.getItem("urlembederFavorites");
   if(storedFavs!=null){
-    var favorites=JSON.parse(favorites);
+    var favorites=JSON.parse(storedFavs);
     console.log(favorites);
     document.getElementById("bookmarkList").innerHTML="";
-    for(var i=0;i<storedFavs.length;i++){
-      document.getElementById("bookmarkList").innerHTML+=storedFavs+"<br>";
+    for(var i=0;i<favorites.length;i++){
+      document.getElementById("bookmarkList").innerHTML+=favorites[i]+"<br>";
     }
   }
 
