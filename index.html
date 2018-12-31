@@ -171,6 +171,7 @@ function toggleBookmark(){
   var storedFavs=localStorage.getItem("urlembederFavorites");
   if(storedFavs!=null){
     var favorites=JSON.parse(favorites);
+    console.log(favorites);
     document.getElementById("bookmarkList").innerHTML="";
     for(var i=0;i<storedFavs.length;i++){
       document.getElementById("bookmarkList").innerHTML+=storedFavs+"<br>";
