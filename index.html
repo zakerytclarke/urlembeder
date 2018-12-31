@@ -73,7 +73,7 @@ Url Embeder
 </h1>
 
 
-<div style="display:inline-block;right:0;width:50%;display: flex;">
+<div style="display:inline-block;">
 <select id="theme" style="display:inline-block;" onchange="updateSettings();">
 <option value="chrome">Chrome</option>
 <option value="clouds">Clouds</option>
@@ -105,8 +105,11 @@ Url Embeder
 
 <input id="url" type="button" value="Fullscreen" onclick="view();">
 
-<button id="fav">
+<button id="fav" onclick="addFavorite();">
 <img src="assets/star.png">
+</button>
+<button id="bookmark" onclick="toggleBookmark();">
+<img src="assets/bookmark.png">
 </button>
 
   </div>
@@ -118,6 +121,11 @@ Url Embeder
 &lt;/script&gt;</div>
 <iframe id="output" src="http://zclarke.xyz/urlembeder/r/?JTI1M0NoMSUyNTNFSGVsbG8lMjUyMFdvcmxkJTI1M0MlMkZoMSUyNTNF"></iframe>
 </div>
+
+
+<div id="bookmarkList" style="position:absolute;width:90vw;height:90vh;overflow:scroll;background-color:#6a6e72;">
+</div>
+
 <script src="ace/ace.js" type="text/javascript" charset="utf-8"></script>
 <script>
 var editor = ace.edit("editor");
@@ -134,6 +142,14 @@ if(o==""){
 }else{
   editor.setValue(unescape(decodeURIComponent(atob(o))));
 }
+
+var storedFavs=localStorage.getItem("urlembederFavorites");
+if(storedFavs!=null){
+  var favorites=JSON.parse(favorites);
+}
+
+
+
 function render(){
   var url="http://zclarke.xyz/urlembeder/r/?"+btoa(encodeURIComponent(escape(editor.getValue())));
   //document.getElementById("url").value=url;
@@ -146,6 +162,40 @@ function view(){
 function updateSettings(){
   editor.setTheme("ace/theme/"+document.getElementById("theme").value);
 }
+
+function toggleBookmark(){
+
+  var storedFavs=localStorage.getItem("urlembederFavorites");
+  if(storedFavs!=null){
+    var favorites=JSON.parse(favorites);
+    document.getElementById("bookmarkList").innerHTML="";
+    for(var i=0;i<storedFavs.length;i++){
+      document.getElementById("bookmarkList").innerHTML+=storedFavs+"<br>";
+    }
+  }
+
+  if(document.getElementById("bookmarkList").style.display=="none"){
+    document.getElementById("bookmarkList").style.display=="block";
+  }else{
+    document.getElementById("bookmarkList").style.display=="none";
+  }
+}
+
+function addFavorite(){
+  var url="http://zclarke.xyz/urlembeder/r/?"+btoa(encodeURIComponent(escape(editor.getValue())));
+
+  var storedFavs=localStorage.getItem("urlembederFavorites");
+  if(storedFavs!=null){
+    var favorites=JSON.parse(favorites);
+  }else{
+    var favorites=[];
+  }
+  favorites.push(url);
+
+  localStorage.setItem("urlembederFavorites", JSON.stringify(favorites));
+
+}
+
 </script>
 </body>
 </html>
