@@ -167,7 +167,8 @@ function render(){
   var url="http://zclarke.xyz/urlembeder/r/?"+btoa(encodeURIComponent(escape(editor.getValue())));
   //document.getElementById("url").value=url;
   document.getElementById("output").src=url;
-  history.pushState("", "","http://zclarke.xyz/urlembeder/?"+btoa(encodeURIComponent(escape(editor.getValue()))));
+  //Keep only the current copy of the project in URL
+  //history.pushState("", "","http://zclarke.xyz/urlembeder/?"+btoa(encodeURIComponent(escape(editor.getValue()))));
 }
 function view(){
   window.open("http://zclarke.xyz/urlembeder/r/?"+btoa(encodeURIComponent(escape(editor.getValue()))));
